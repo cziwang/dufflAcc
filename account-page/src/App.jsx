@@ -5,6 +5,8 @@ import awsconfig from './aws-exports'
 import { AmplifySignOut, withAuthenticator } from '@aws-amplify/ui-react'
 import { listAccounts } from './graphql/queries';
 import {useState, useEffect} from 'react';
+import { Paper, IconButton } from '@material-ui/core';
+import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 
 Amplify.configure(awsconfig)
 
@@ -29,10 +31,26 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <AmplifySignOut >
+        <AmplifySignOut />
           <h2>My App Content</h2>
-        </AmplifySignOut>
       </header>
+      <div className="accountList">
+        { accounts.map(account => {
+          return (
+            <Paper variant="outlined" elevation={2}>
+              <div className="accountCard">
+                <IconButton aria-label="play">
+                  <PlayArrowIcon />
+                </IconButton>
+                <div>
+                  <div className="accountUsername">{account.userName}</div>
+                  <div className="accountDeliveryAddress">{account.deliveryAddress}</div>
+                </div>
+              </div>
+            </Paper>
+          )
+        })}
+      </div>
     </div>
   );
 }
