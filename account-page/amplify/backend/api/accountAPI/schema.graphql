@@ -1,6 +1,0 @@
-type Account @model {
-  id: ID!
-  userName: String!
-  deliveryAddress: String!
-  email: String!
-}

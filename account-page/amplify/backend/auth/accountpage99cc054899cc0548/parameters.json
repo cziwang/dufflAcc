@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "accountpagee5cf815f_identitypool_e5cf815f",
+    "identityPoolName": "accountpage99cc0548_identitypool_99cc0548",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "accoune5cf815f",
-    "userPoolName": "accountpagee5cf815f_userpool_e5cf815f",
+    "resourceNameTruncated": "accoun99cc0548",
+    "userPoolName": "accountpage99cc0548_userpool_99cc0548",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -28,10 +28,10 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "accoune5cf815f_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "accoun99cc0548_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "e5cf815f",
-    "resourceName": "accountpagee5cf815f",
+    "sharedId": "99cc0548",
+    "resourceName": "accountpage99cc054899cc0548",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -45,12 +45,33 @@
             "Arn"
         ]
     },
-    "useDefault": "default",
-    "usernameAttributes": [
-        "email"
+    "useDefault": "manual",
+    "thirdPartyAuth": false,
+    "userPoolGroups": true,
+    "adminQueries": false,
+    "triggers": "{\n  \"PostConfirmation\": [\n    \"custom\"\n  ]\n}",
+    "hostedUI": false,
+    "userPoolGroupList": [
+        "Admin"
     ],
-    "userPoolGroupList": [],
     "serviceName": "Cognito",
     "usernameCaseSensitive": false,
-    "dependsOn": []
+    "parentStack": {
+        "Ref": "AWS::StackId"
+    },
+    "breakCircularDependency": true,
+    "permissions": [],
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "accountpage99cc054899cc0548PostConfirmation",
+            "triggerProvider": "Cognito",
+            "attributes": [
+                "Arn",
+                "Name"
+            ]
+        }
+    ],
+    "authTriggerConnections": "[\n  {\n    \"triggerType\": \"PostConfirmation\",\n    \"lambdaFunctionName\": \"accountpage99cc054899cc0548PostConfirmation\"\n  }\n]",
+    "authProviders": []
 }

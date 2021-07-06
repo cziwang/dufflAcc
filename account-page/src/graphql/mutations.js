@@ -1,45 +1,42 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createAccount = /* GraphQL */ `
-  mutation CreateAccount(
-    $input: CreateAccountInput!
-    $condition: ModelAccountConditionInput
+export const createUser = /* GraphQL */ `
+  mutation CreateUser(
+    $input: CreateUserInput!
+    $condition: ModelUserConditionInput
   ) {
-    createAccount(input: $input, condition: $condition) {
+    createUser(input: $input, condition: $condition) {
       id
-      userName
-      deliveryAddress
+      username
       email
       createdAt
       updatedAt
     }
   }
 `;
-export const updateAccount = /* GraphQL */ `
-  mutation UpdateAccount(
-    $input: UpdateAccountInput!
-    $condition: ModelAccountConditionInput
+export const updateUser = /* GraphQL */ `
+  mutation UpdateUser(
+    $input: UpdateUserInput!
+    $condition: ModelUserConditionInput
   ) {
-    updateAccount(input: $input, condition: $condition) {
+    updateUser(input: $input, condition: $condition) {
       id
-      userName
-      deliveryAddress
+      username
       email
       createdAt
       updatedAt
     }
   }
 `;
-export const deleteAccount = /* GraphQL */ `
-  mutation DeleteAccount(
-    $input: DeleteAccountInput!
-    $condition: ModelAccountConditionInput
+export const deleteUser = /* GraphQL */ `
+  mutation DeleteUser(
+    $input: DeleteUserInput!
+    $condition: ModelUserConditionInput
   ) {
-    deleteAccount(input: $input, condition: $condition) {
+    deleteUser(input: $input, condition: $condition) {
       id
-      userName
-      deliveryAddress
+      username
       email
       createdAt
       updatedAt

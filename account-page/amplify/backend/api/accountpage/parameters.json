@@ -1,10 +1,10 @@
 {
-  "AppSyncApiName": "accountAPI",
+  "AppSyncApiName": "accountpage",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
   "DynamoDBEnableServerSideEncryption": false,
   "AuthCognitoUserPoolId": {
     "Fn::GetAtt": [
-      "authaccountpagee5cf815f",
+      "authaccountpage99cc054899cc0548",
       "Outputs.UserPoolId"
     ]
   }

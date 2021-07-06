@@ -1,14 +1,47 @@
 {
   "auth": {
-    "accountpagee5cf815f": {
+    "userPoolGroups": {
+      "service": "Cognito-UserPool-Groups",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "auth",
+          "resourceName": "accountpage99cc054899cc0548",
+          "attributes": [
+            "UserPoolId",
+            "AppClientIDWeb",
+            "AppClientID",
+            "IdentityPoolId"
+          ]
+        }
+      ]
+    },
+    "accountpage99cc054899cc0548": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
-      "dependsOn": [],
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "accountpage99cc054899cc0548PostConfirmation",
+          "triggerProvider": "Cognito",
+          "attributes": [
+            "Arn",
+            "Name"
+          ]
+        }
+      ],
       "customAuth": false
     }
   },
+  "function": {
+    "accountpage99cc054899cc0548PostConfirmation": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
   "api": {
-    "accountAPI": {
+    "accountpage": {
       "service": "AppSync",
       "providerPlugin": "awscloudformation",
       "output": {
@@ -16,7 +49,7 @@
           "defaultAuthentication": {
             "authenticationType": "AMAZON_COGNITO_USER_POOLS",
             "userPoolConfig": {
-              "userPoolId": "authaccountpagee5cf815f"
+              "userPoolId": "authaccountpage99cc054899cc0548"
             }
           },
           "additionalAuthenticationProviders": []
